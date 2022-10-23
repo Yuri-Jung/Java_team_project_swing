@@ -24,7 +24,8 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 
-public class Login extends JFrame {
+// ComLogin
+public class P_1 extends JFrame {
 	private JPanel contentPane;
 	private JTextField comPw;
 	private JTextField comId;
@@ -38,7 +39,7 @@ public class Login extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Login frame = new Login();
+					P_1 frame = new P_1();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -62,7 +63,7 @@ public class Login extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Login() {
+	public P_1() {
 		setTitle("\uB2E4\uACE0\uCCD0\uCE74\uC13C\uD130");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
