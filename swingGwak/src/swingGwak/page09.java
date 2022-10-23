@@ -1,6 +1,5 @@
 package swingGwak;
 
-import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.EventQueue;
@@ -8,8 +7,6 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.AbstractButton;
-import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -17,8 +14,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.JTextField;
-import javax.swing.table.DefaultTableModel;
 
 public class page09 {
 	private static final String EXIT_ON_CLOSE = null;
@@ -28,6 +23,9 @@ public class page09 {
 		JPanel tablePanel = new JPanel(); // 테이블용 JPabnel  생성
 		
 		
+		
+		
+		
 		String[] headings = new String[] {"num", "SrvName", "techName", "SrvPrice"}; // 행 데이터 선언
 		Object[][] data = new Object[][] { // 2차원 배열, 내부 데이터 입력
 			{"1", "타이어교체", "김땡땡", "100000"},
@@ -35,9 +33,13 @@ public class page09 {
 			{"3", "에어컨청소", "최뫄뫄", "30000"}
 		};
 		tablePanel.setLayout(null);
-
+		
+		//DefaultTableModel model = new DefaultTableModel(data,headings);
+		
 		// JTable 선언
 		JTable table = new JTable(data, headings);
+		//JTable table = new JTable(model);
+		
 	
 		table.setPreferredScrollableViewportSize(new Dimension(700, 600));
 		
@@ -135,7 +137,16 @@ public class page09 {
 		});
 
 		
+//		DefaultTableModel m =
+//                (DefaultTableModel)table.getModel();
+//        //모델에 데이터 추가 , 1번째 출에 새로운 데이터를 추가합니다
+//        m.insertRow(0, new Object[]{"d1","d2","d3"});
+//        //추가를 마치고 데이터 갱신을 알립니다.
+//        table.updateUI();
+		
+	
 	}
+	
 	
 	
 	

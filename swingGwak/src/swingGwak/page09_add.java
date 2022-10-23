@@ -1,17 +1,18 @@
 package swingGwak;
 
-import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JTable;
 import javax.swing.JButton;
-import java.awt.Font;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+
+
 
 public class page09_add extends JFrame{
 	private JTextField srvName;
@@ -95,12 +96,18 @@ public class page09_add extends JFrame{
 		
 		btnSrvReg.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				page07 a1 = new page07();
-				a1.setVisible(true);
-				// 테이블 데이터 추가 -> 등록(입력 데이터 추가) 기능 구현
+				page09 a1 = new page09();
+				
+				
 				dispose();
+				
+				
 			}
 		});
+		
+		
+		
+		
 		
 	}
 
