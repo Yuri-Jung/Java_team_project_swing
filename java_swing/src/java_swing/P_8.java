@@ -75,11 +75,10 @@ public class P_8 extends JFrame {
 		contentPane.setLayout(null);
 		
 		// Num, Service Name, Provide Technician, Service Price
-		Object[] columns = {"Num", "¼­ºñ½º¸í", "Á¦°ø Á¤ºñ»ç", "¼­ºñ½º °¡°İ"};
+		Object[] columns = {"Num", "ì„œë¹„ìŠ¤ ëª…", "ì œê³µ ì •ë¹„ì‚¬", "ì„œë¹„ìŠ¤ ê°€ê²©"};
 		Object[][] rowNames = {
-				{"1", "¼­ºñ½º1", "È«±æµ¿", "10000"},
-				{"2", "¼­ºñ½º2", "¹ÙµÏÀÌ", "20000"},
-				{"3", "¼­ºñ½º3", "±è¿µÈñ", "30000"}
+				{"1", "íƒ€ì´ì–´ êµì²´", "ê¹€í•˜í•˜, ë°•ë‚˜ë‚˜", "ê³µì„ë¹„2"},
+				{"2", "ì—”ì§„ì˜¤ì¼ êµì²´", "ê¹€í•˜í•˜, ì¡°ë§ˆë§ˆ", "ê³µì„ë¹„1"},
 		};
 		
 		// Text Align Center
@@ -88,16 +87,16 @@ public class P_8 extends JFrame {
 		
 		tableSrvList = new JTable(rowNames, columns);
 		tableSrvList.getColumn("Num").setCellRenderer(render);
-		tableSrvList.getColumn("¼­ºñ½º¸í").setCellRenderer(render);
-		tableSrvList.getColumn("Á¦°ø Á¤ºñ»ç").setCellRenderer(render);
-		tableSrvList.getColumn("¼­ºñ½º °¡°İ").setCellRenderer(render);
+		tableSrvList.getColumn("ì„œë¹„ìŠ¤ ëª…").setCellRenderer(render);
+		tableSrvList.getColumn("ì œê³µ ì •ë¹„ì‚¬").setCellRenderer(render);
+		tableSrvList.getColumn("ì„œë¹„ìŠ¤ ê°€ê²©").setCellRenderer(render);
 		
 		// Column Not Move
 		tableSrvList.getTableHeader().setReorderingAllowed(false);
 		
 		// Column Change Width
-		tableSrvList.getColumn("¼­ºñ½º¸í").setPreferredWidth(200);
-		tableSrvList.getColumn("Á¦°ø Á¤ºñ»ç").setPreferredWidth(350);
+		tableSrvList.getColumn("ì„œë¹„ìŠ¤ ëª…").setPreferredWidth(200);
+		tableSrvList.getColumn("ì œê³µ ì •ë¹„ì‚¬").setPreferredWidth(350);
 		
 		// Row Change Height 
 		tableSrvList.setRowHeight(50);
@@ -113,28 +112,28 @@ public class P_8 extends JFrame {
 		contentPane.add(scSrvList);
 		
 		// Button Create
-		btnAddsrv = new JButton("Ãß°¡");
+		btnAddsrv = new JButton("ì¶”ê°€");
 		btnAddsrv.setBackground(new Color(244, 204, 204));
 		btnAddsrv.setBounds(150, 100, 150, 50);
 		btnAddsrv.setBorder(new BevelBorder(BevelBorder.RAISED, Color.red, Color.red, 
 				Color.red, Color.red));
 		contentPane.add(btnAddsrv);
 		
-		btnEditSrv = new JButton("¼öÁ¤");
+		btnEditSrv = new JButton("ìˆ˜ì •");
 		btnEditSrv.setBackground(new Color(244, 204, 204));
 		btnEditSrv.setBounds(325, 100, 150, 50);
 		btnEditSrv.setBorder(new BevelBorder(BevelBorder.RAISED, Color.red, Color.red, 
 				Color.red, Color.red));
 		contentPane.add(btnEditSrv);
 		
-		btnDelSrv = new JButton("»èÁ¦");
+		btnDelSrv = new JButton("ì‚­ì œ");
 		btnDelSrv.setBackground(new Color(244, 204, 204));
 		btnDelSrv.setBounds(500, 100, 150, 50);
 		btnDelSrv.setBorder(new BevelBorder(BevelBorder.RAISED, Color.red, Color.red, 
 				Color.red, Color.red));
 		contentPane.add(btnDelSrv);
 		
-		btnBackMain = new JButton("µ¹¾Æ°¡±â");
+		btnBackMain = new JButton("ëŒì•„ê°€ê¸°");
 		btnBackMain.setBackground(new Color(244, 204, 204));
 		btnBackMain.setBounds(800, 943, 300, 50);
 		btnBackMain.setBorder(new BevelBorder(BevelBorder.RAISED, Color.red, Color.red, 
