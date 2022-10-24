@@ -23,6 +23,7 @@ import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
+import javax.swing.JLabel;
 
 // ComLogin
 public class P_1 extends JFrame {
@@ -31,6 +32,7 @@ public class P_1 extends JFrame {
 	private JTextField comId;
 	private JButton btnComLogin;
 	private JButton btnComJoin;
+	private JLabel lbGrayCat;
 
 	/**
 	 * Launch the application.
@@ -49,16 +51,16 @@ public class P_1 extends JFrame {
 	}
 	
 	// Image & Component Draw
-	@Override
-	public void paint(Graphics g) {
-		Toolkit tool = Toolkit.getDefaultToolkit();
-		Image img = tool.getImage("img/grayCat.png");
-		g.drawImage(img, 800, 215, 305, 153, this);
-		comId.updateUI();
-		comPw.updateUI();
-		btnComLogin.updateUI();
-		btnComJoin.updateUI();
-	}
+//	@Override
+//	public void paint(Graphics g) {
+//		Toolkit tool = Toolkit.getDefaultToolkit();
+//		Image img = tool.getImage("img/grayCat.png");
+//		g.drawImage(img, 800, 215, 305, 153, this);
+//		comId.updateUI();
+//		comPw.updateUI();
+//		btnComLogin.updateUI();
+//		btnComJoin.updateUI();
+//	}
 
 	/**
 	 * Create the frame.
@@ -75,37 +77,42 @@ public class P_1 extends JFrame {
 		contentPane.setLayout(null);
 		
 		comPw = new JTextField();
+		comPw.setBounds(752, 399, 404, 66);
 		comPw.setText("\uBE44\uBC00\uBC88\uD638");
 		comPw.setHorizontalAlignment(SwingConstants.CENTER);
-		comPw.setBounds(752, 399, 404, 66);
 		comPw.setColumns(10);
 		comPw.setBorder(new BevelBorder(BevelBorder.RAISED, Color.red, Color.red, 
 				Color.red, Color.red));
 		contentPane.add(comPw);
 		
 		comId = new JTextField();
+		comId.setBounds(752, 323, 404, 66);
 		comId.setText("\uC544\uC774\uB514");
 		comId.setHorizontalAlignment(SwingConstants.CENTER);
 		comId.setColumns(10);
-		comId.setBounds(752, 323, 404, 66);
 		comId.setBorder(new BevelBorder(BevelBorder.RAISED, Color.red, Color.red, 
 				Color.red, Color.red));
 		contentPane.add(comId);
 		
 		btnComLogin = new JButton("\uB85C\uADF8\uC778");
+		btnComLogin.setBounds(752, 520, 404, 71);
 		btnComLogin.setForeground(new Color(0, 0, 0));
 		btnComLogin.setBackground(new Color(244, 204, 204));
-		btnComLogin.setBounds(752, 520, 404, 71);
 		btnComLogin.setBorder(new BevelBorder(BevelBorder.RAISED, Color.red, Color.red, 
 				Color.red, Color.red));
 		contentPane.add(btnComLogin);
 		
 		btnComJoin = new JButton("\uD68C\uC6D0\uAC00\uC785");
-		btnComJoin.setBackground(new Color(244, 204, 204));
 		btnComJoin.setBounds(752, 601, 404, 71);
+		btnComJoin.setBackground(new Color(244, 204, 204));
 		btnComJoin.setBorder(new BevelBorder(BevelBorder.RAISED, Color.red, Color.red, 
 				Color.red, Color.red));
 		contentPane.add(btnComJoin);
+		
+		ImageIcon img = new ImageIcon("img/grayCat.png");
+		lbGrayCat = new JLabel("", img, JLabel.CENTER);
+		lbGrayCat.setBounds(800, 170, 305, 153);
+		contentPane.add(lbGrayCat);
 		
 		// Font Setting
 		try {
