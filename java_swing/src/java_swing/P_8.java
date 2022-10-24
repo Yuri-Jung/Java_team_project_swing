@@ -5,9 +5,14 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.io.InputStream;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
@@ -27,6 +32,8 @@ public class P_8 extends JFrame {
 	private JButton btnAddsrv;
 	private JButton btnEditSrv;
 	private JButton btnDelSrv;
+	private JButton btnBackMain;
+	private JLabel lbGrayCat;
 
 	/**
 	 * Launch the application.
@@ -44,16 +51,16 @@ public class P_8 extends JFrame {
 		});
 	}
 	
-	@Override
-	public void paint(Graphics g) {
-		Toolkit tool = Toolkit.getDefaultToolkit();
-		Image img = tool.getImage("img/grayCat.png");
-		g.drawImage(img, 770, 50, 305, 153, this);
-		tableSrvList.updateUI();
-		btnAddsrv.updateUI();
-		btnEditSrv.updateUI();
-		btnDelSrv.updateUI();
-	}
+//	@Override
+//	public void paint(Graphics g) {
+//		Toolkit tool = Toolkit.getDefaultToolkit();
+//		Image img = tool.getImage("img/grayCat.png");
+//		g.drawImage(img, 770, 50, 305, 153, this);
+//		tableSrvList.updateUI();
+//		btnAddsrv.updateUI();
+//		btnEditSrv.updateUI();
+//		btnDelSrv.updateUI();
+//	}
 
 	/**
 	 * Create the frame.
@@ -108,14 +115,14 @@ public class P_8 extends JFrame {
 		// Button Create
 		btnAddsrv = new JButton("추가");
 		btnAddsrv.setBackground(new Color(244, 204, 204));
-		btnAddsrv.setBounds(100, 100, 150, 50);
+		btnAddsrv.setBounds(150, 100, 150, 50);
 		btnAddsrv.setBorder(new BevelBorder(BevelBorder.RAISED, Color.red, Color.red, 
 				Color.red, Color.red));
 		contentPane.add(btnAddsrv);
 		
 		btnEditSrv = new JButton("수정");
 		btnEditSrv.setBackground(new Color(244, 204, 204));
-		btnEditSrv.setBounds(300, 100, 150, 50);
+		btnEditSrv.setBounds(325, 100, 150, 50);
 		btnEditSrv.setBorder(new BevelBorder(BevelBorder.RAISED, Color.red, Color.red, 
 				Color.red, Color.red));
 		contentPane.add(btnEditSrv);
@@ -126,5 +133,33 @@ public class P_8 extends JFrame {
 		btnDelSrv.setBorder(new BevelBorder(BevelBorder.RAISED, Color.red, Color.red, 
 				Color.red, Color.red));
 		contentPane.add(btnDelSrv);
+		
+		btnBackMain = new JButton("돌아가기");
+		btnBackMain.setBackground(new Color(244, 204, 204));
+		btnBackMain.setBounds(800, 943, 300, 50);
+		btnBackMain.setBorder(new BevelBorder(BevelBorder.RAISED, Color.red, Color.red, 
+				Color.red, Color.red));
+		contentPane.add(btnBackMain);
+		
+		ImageIcon img = new ImageIcon("img/grayCat.png");
+		lbGrayCat = new JLabel("", img, JLabel.CENTER);
+		lbGrayCat.setBounds(770, 40, 305, 153);
+		contentPane.add(lbGrayCat);
+		
+		// Font Setting
+		try {
+            InputStream inputStream = new BufferedInputStream(
+                    new FileInputStream("font/NanumBarunGothic.ttf"));
+
+            Font font = Font.createFont(Font.TRUETYPE_FONT, inputStream);
+
+            btnAddsrv.setFont(font.deriveFont(Font.BOLD, 24));
+            btnEditSrv.setFont(font.deriveFont(Font.BOLD, 24));
+            btnDelSrv.setFont(font.deriveFont(Font.BOLD, 24));
+            btnBackMain.setFont(font.deriveFont(Font.BOLD, 24));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 	}
 }
